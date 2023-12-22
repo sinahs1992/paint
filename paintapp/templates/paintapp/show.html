@@ -1,0 +1,15 @@
+<!-- paint/templates/paint/drawing_list.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drawing List</title>
+</head>
+<body>
+    <h1>Drawing List</h1>
+    {% for drawing in drawings %}
+        <img src="{{ drawing.image }}" alt="Drawing {{ drawing.id }}" style="max-width: 400px; max-height: 400px;">
+    {% endfor %}
+</body>
+</html>

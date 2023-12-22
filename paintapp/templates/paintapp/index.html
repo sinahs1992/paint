@@ -1,0 +1,20 @@
+{% load static %}
+<!-- paint/templates/paint/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paint App</title>
+</head>
+<body>
+    <canvas id="paintCanvas" width="800" height="600" style="border:1px solid #000;"></canvas>
+    <form id="saveForm" method="post" action="{% url 'paintapp:index' %}">
+        {% csrf_token %}
+        <input type="hidden" name="image_data" id="imageDataField">
+        <button type="submit">Save Drawing</button>
+    </form>
+    <a href="{% url "paintapp:drawing_list" %}">SHOW</a>
+    <script src="{% static 'js/functions.js' %}"></script>
+</body>
+</html>
